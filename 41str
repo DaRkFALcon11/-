@@ -1,0 +1,27 @@
+/// bad
+public List<int[]> getThem{} {
+  List<int[]> list1 = new ArrayList<int[]>();
+  for (int[] x : theList)
+    if (x[0] == 4)
+      list1.add(x);
+  return list1;
+}
+
+/// medium
+public List<int[]> getFlaggedCells{} {
+  List<int[]> flaggedCells = new ArrayList<int[]>();
+  for (int[] cell : gameBoard)
+    if (cell[STATUS_VALUE] == FLAGGED)
+      flaggedCells.add(cell);
+  return flaggedCells;
+}
+
+/// good
+public List<int[]> getFlaggedCells{} {
+  List<int[]> flaggedCells = new ArrayList<int[]>();
+  for (int[] cell : gameBoard)
+    if (cell.isFlagged())
+      flaggedCells.add(cell);
+  return flaggedCells;
+}
+/// Не изменилось ничего, кроме имен - но теперь можно легко понять, что здесь происходит. Такова сила выбора хороших имен.
